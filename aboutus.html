@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="author" content="A S M Sarwar Zahan">
 <head>
+	<meta name="author" content="A S M Sarwar Zahan">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="200">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><img src="img/logo.png" height=30 width=41></a>
+				<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt ="logo" height=30 width=41></a>
 			</div>
   			<div id="navbar" class="navbar-collapse collapse">
   				<ul class="nav navbar-nav">
@@ -61,25 +61,42 @@
 					<li><a href="contactus.html">
 						<i class ="fa fa-envelope-o"></i> Contact</a></li>
 				</ul>
-				<form class="navbar-right form-inline">
-					<div class="form-group">
-						<label class="sr-only" for="inputEmail">Email address</label>
-						<input type="email" class="form-control" id="inputEmail" placeholder="Email">
-					</div>
-					<div class="form-group">
-						<label class="sr-only" for="inputPassword">Password</label>
-						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-					</div>
-					<div class="checkbox">
-						<label style="color: white;">
-							<input type="checkbox"> Remember me
-						</label>
-					</div>
-					<button type="submit" class="btn btn-info navbar-btn">Sign in</button>
-				</form>
+				<ul class="nav navbar-nav navbar-right">
+                	<li><a data-toggle="modal" data-target="#loginModal">
+                	<span class="glyphicon glyphicon-log-in"></span> Login</a>
+                	</li>
+            	</ul>
 			</div>
 		</div>
-	</nav>  
+	</nav>
+	<div id="loginModal" class="modal fade" role="dialog">
+	        <div class="modal-dialog">
+	        <!-- Modal content-->
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal">&times;</button>
+		                <h4 class="modal-title">Login </h4>
+		            </div>
+		            <div class="modal-body">
+			            <form class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="email">Email address</label>
+                                <input type="email" class="form-control input-sm" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="inputPassword">Password</label>
+                                <input type="password" class="form-control input-sm" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-sm">Sign in</button>
+                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                        </form>
+		            </div>
+	            </div>
+            </div>
+        </div>  
 	<header class="jumbotron">
 
 			  					<!-- Main component for a primary marketing message or call to action -->
@@ -93,11 +110,13 @@
 				</div>
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding:20px;"></p>
-					<img src="img/logo.png" class="img-responsive">
+					<img src="img/logo.png" alt = "logo" class="img-responsive">
 				</div>
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding:40px;"></p>
-					<a class="btn btn-warning" href="index.html#reserve-table" role="button">Reserve Table</a>
+					<a type="button" class="btn btn-warning btn-block"
+                    data-toggle="tooltip" title="Or Call us at +852 12345678"
+                    data-placement="bottom" href="index.html#reserve-table">Reserve Table</a>
 				</div>                              
 			</div>            
 		</div>
@@ -321,7 +340,7 @@
 				</div>
 				<div class="col-xs-12">
 					<p style="padding:10px;"></p>
-					<p align=center>© Copyright 2015 Ristorante Con Fusion</p>
+					<p style ="align=center;">© Copyright 2015 Ristorante Con Fusion</p>
 				</div>
 			</div>
 		</div>
@@ -330,6 +349,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+         });
+    </script>
 </body>
 
 </html>
