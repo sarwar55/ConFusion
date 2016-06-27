@@ -1,2 +1,2 @@
 # ConFusion
-DownLoad the whole file and run any of the .html file
+DownLoad the whole folder and run any of the .html file
